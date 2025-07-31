@@ -20,14 +20,12 @@ func main() {
 	r.Run(":8080")
 }
 
-// GET /items
 func getItems(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"items": items,
 	})
 }
 
-// POST /items
 func addItem(c *gin.Context) {
 	var newItem struct {
 		Name string `json:"name" binding:"required"`
